@@ -401,7 +401,7 @@ def main():
     # Training parameters
     parser.add_argument('--total_steps', type=int, default=1e7, help='total number of training steps')
     parser.add_argument('--seed-steps', type=int, default=5000, help='seed episodes')
-    parser.add_argument('--update-steps', type=int, default=100, help='num of train update steps per iter')
+    parser.add_argument('--update-steps', type=int, default=150, help='num of train update steps per iter')
     parser.add_argument('--collect-steps', type=int, default=1000, help='actor collect steps per 1 train iter')
     parser.add_argument('--batch-size', type=int, default=50, help='batch size')
     parser.add_argument('--train-seq-len', type=int, default=50, help='sequence length for training world model')
