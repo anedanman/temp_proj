@@ -402,6 +402,11 @@ def main():
     parser.add_argument('--num-units', type=int, default=400, help='num hidden units for reward/value/discount models')
     parser.add_argument('--deter-size', type=int, default=200, help='GRU hidden size and deterministic belief size')
     parser.add_argument('--stoch-size', type=int, default=32, help='Stochastic State/latent size')
+    parser.add_argument('--nblocks', type=int, default=2, help='resnet blocks in encoder')
+    parser.add_argument('--in_channels', type=int, default=3, help='image channels')
+    parser.add_argument('--out_channels', type=int, default=3, help='image channels')
+    parser.add_argument('--nslots', type=int, default=6, help='number of slots')
+    parser.add_argument('--hidden_size', type=int, default=32, help='hidden size in resnet blocks')
     # Actor Exploration Parameters
     parser.add_argument('--action-repeat', type=int, default=1, help='Action repeat')
     parser.add_argument('--action-noise', type=float, default=0.2, help='Action noise')
