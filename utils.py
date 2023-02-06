@@ -107,3 +107,16 @@ def compute_return(rewards, values, discounts, td_lam, last_value):
 
     returns = torch.flip(torch.stack(rets), [0])
     return returns
+
+
+def spatial_broadcast(x, resolution):
+    x = x.reshape(-1, x.shape[-1], 1, 1)
+    x = torch.unsqueeze(x, dim=-1)
+    x = torch.unsqueeze(x, dim=-1)
+    x = x.expand(*x.shape[:-2], *resolution)
+    return x
+
+
+def spatial_flatten(x):
+    x = torch.swapaxes(x, -3, -1)
+    return torch.flatten(x, -3, -2)
